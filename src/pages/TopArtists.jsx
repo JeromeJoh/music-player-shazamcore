@@ -9,11 +9,18 @@ const TopArtists = () => {
   if (error) return <Error />;
 
   return (
-    <div className="flex flex-col">
-      <h2 className="font-bold text-3xl text-white text-left mt-4 mb-10">Top artists</h2>
+    <div className="rounded-md border-[1px] border-x-[.5px] border-borderGray bg-white overflow-hidden shadow-sm mb-8">
 
-      <div className="flex flex-wrap sm:justify-start justify-center gap-8">
-        {data?.map((track) => <ArtistCard key={track.key} track={track} />)}
+      {/* Section Header */}
+      <div className="flex justify-between items-center h-20 font-bold px-4 py-4 border-b-[.5px] border-borderGray bg-bgWhite">
+        <h2 className="text-2xl text-titleBlack">
+          当红艺人
+        </h2>
+      </div>
+
+      {/* Section Content */}
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2">
+      {data?.map((track) => <ArtistCard key={track.key} track={track} />)}
       </div>
     </div>
   );

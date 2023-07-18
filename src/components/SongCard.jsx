@@ -26,7 +26,7 @@ const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
       {/* Cover */}
       <div className="relative w-full group">
         <img src={song.images?.coverart || loader} alt="cover" />
-        <div className={`absolute inset-0 hover:bg-black hover:bg-opacity-50 group-hover:grid ${activeSong?.title === song.title ? 'bg-black bg-opacity-50' : 'hidden'}`}>
+        <div className={`absolute inset-0 text-white hover:bg-black hover:bg-opacity-50 group-hover:grid ${activeSong?.title === song.title ? 'bg-black bg-opacity-50' : 'hidden'}`}>
           <PlayPause
             song={song}
             isPlaying={isPlaying}

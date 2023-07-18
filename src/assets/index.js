@@ -1,11 +1,11 @@
 import loader from './loader.svg';
 import logo from './logo.svg';
-import credit from './credit.png';
 import button from './button.png';
+import vinly from './vinly.png';
 
 export {
   logo,
   loader,
-  credit,
   button,
+  vinly,
 };

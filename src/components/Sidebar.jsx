@@ -42,9 +42,9 @@ const NavLinks = () => {
             className="w-full rounded hover:bg-[#242529]"
             onClick={handleLinkClick && handleLinkClick()}
           >
-            <div className="flex justify-center gap-x-3 items-center h-20 w-full text-navText hover:text-brightRed">
-              <item.icon className="w-4 h-4 block" />
-              <h3 className="h-6 text-lg leading-6">{item.name}</h3>
+            <div className="flex md:flex-col md:gap-x-0 gap-x-2 justify-center items-center h-28 w-full text-navText hover:text-brightRed">
+              <item.icon className="w-6 h-6 md:w-8 md:h-8 block" />
+              <h3 className="md:text-sm text-xl md:mt-1">{item.name}</h3>
             </div>
           </NavLink>
         );
@@ -58,7 +58,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <aside className="hidden sticky top-0 md:flex flex-col items-center h-screen w-[160px] bg-black px-4 py-8">
+      <aside className="hidden sticky top-0 md:flex flex-col items-center h-screen w-[160px] bg-black md:px-4 py-8">
         <div className="mb-8">
           <img src={logo} alt="Logo" className="h-24" />
         </div>
@@ -76,7 +76,7 @@ const Sidebar = () => {
         )}
       </div>
 
-      <aside className={`md:hidden rounded-md flex flex-col justify-start items-center h-fit w-full bg-black py-16 px-2 transition-all fixed z-10 ${ mobileMenuOpen ? 'top-0' : '-top-full'}`}>
+      <aside className={`md:hidden rounded-md flex flex-col justify-start items-center h-fit w-full bg-black py-16 px-4 transition-all fixed z-10 ${ mobileMenuOpen ? 'top-0' : '-top-full'}`}>
         <div className="flex flex-col justify-center items-center mb-4 select-none">
           <img src={logo} alt="Logo" className="h-24" />
         </div>
