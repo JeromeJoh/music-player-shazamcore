@@ -58,7 +58,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <aside className="hidden sticky top-0 md:flex flex-col items-center h-screen w-[160px] bg-black md:px-4 py-8">
+      <aside className="hidden sticky top-0 md:flex flex-col items-center h-screen w-[160px] bg-black md:px-4 py-8 z-10">
         <div className="mb-8">
           <img src={logo} alt="Logo" className="h-24" />
         </div>
@@ -76,7 +76,7 @@ const Sidebar = () => {
         )}
       </div>
 
-      <aside className={`md:hidden rounded-md flex flex-col justify-start items-center h-fit w-full bg-black py-16 px-4 transition-all fixed z-10 ${ mobileMenuOpen ? 'top-0' : '-top-full'}`}>
+      <aside className={`md:hidden rounded-b-md flex flex-col justify-start items-center h-fit w-full bg-black py-16 px-4 transition-all fixed z-10 ${ mobileMenuOpen ? 'top-0' : '-top-full'}`}>
         <div className="flex flex-col justify-center items-center mb-4 select-none">
           <img src={logo} alt="Logo" className="h-24" />
         </div>

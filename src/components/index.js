@@ -8,9 +8,11 @@ import SongBar from "./SongBar";
 import Loader from './Loader';
 import Error from './Error';
 
-import PlayPause from "./PlayPause";
 import DetailsHeader from './DetailsHeader';
 import RelatedSongs from './RelatedSongs'
+
+import MusicPlayer from './MusicPlayer';
+import PlayPause from "./PlayPause";
 
 export {
   Sidebar,
@@ -20,7 +22,8 @@ export {
   SongBar,
   Loader,
   Error,
-  PlayPause,
   DetailsHeader,
-  RelatedSongs
+  RelatedSongs,
+  MusicPlayer,
+  PlayPause,
 }

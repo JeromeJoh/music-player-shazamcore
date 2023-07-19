@@ -11,9 +11,9 @@ const PlayPause = ({
     className="h-full w-full grid place-items-center"
   >
     {isPlaying && activeSong?.title === song.title ? (
-      <FaPauseCircle className="h-10 w-10" />
+      <FaPauseCircle className="h-10 w-10" onClick={handlePause} />
     ) : (
-      <FaPlayCircle className="h-10 w-10" />
+      <FaPlayCircle className="h-10 w-10" onClick={handlePlay} />
     )}
   </div>
 );
