@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 
 import SongCard from './SongCard';
 import ArtistCard from "./ArtistCard";
+import SongBar from "./SongBar";
 
 import Loader from './Loader';
 import Error from './Error';
@@ -16,6 +17,7 @@ export {
   SearchBar,
   SongCard,
   ArtistCard,
+  SongBar,
   Loader,
   Error,
   PlayPause,

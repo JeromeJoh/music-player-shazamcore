@@ -17,7 +17,7 @@ const App = () => {
       <div className="flex flex-col w-full px-12 pt-8">
         <SearchBar />
 
-        <div>
+        <main>
           <Routes>
             <Route path="/" element={<Discover />} />
             <Route path="/top-artists" element={<TopArtists />} />
@@ -26,7 +26,7 @@ const App = () => {
             <Route path="/songs/:songid" element={<SongDetails />} />
             <Route path="/search/:searchTerm" element={<Search />} />
           </Routes>
-        </div>
+        </main>
       </div>
     </div>
   );

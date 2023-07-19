@@ -11,15 +11,19 @@ const Search = () => {
 
   const songs = data?.tracks?.hits.map((song) => song.track);
 
-  if (isFetching) return <Loader title={`Searching ${searchTerm}...`} />;
+  if (isFetching) return <Loader title={`"${searchTerm}" 搜索中...`} />;
 
   if (error) return <Error />;
 
   return (
-    <div className="flex flex-col">
-      <h2 className="font-bold text-3xl text-white text-left mt-4 mb-10">Showing results for <span className="font-black">{searchTerm}</span></h2>
+    <section className="rounded-md border-[1px] border-x-[.5px] border-borderGray bg-white overflow-hidden shadow-sm mb-8">
 
-      <div className="flex flex-wrap sm:justify-start justify-center gap-8">
+      {/* Section Header*/}
+      <div className="relative flex justify-between items-center h-20 font-bold px-4 py-4 border-b-[.5px] border-borderGray bg-bgWhite">
+        <h2 className="text-2xl text-titleBlack">关于 "{searchTerm}" 的搜索结果</h2>
+      </div>
+
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2">
         {songs.map((song, i) => (
           <SongCard
             key={song.key}
@@ -31,7 +35,7 @@ const Search = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
