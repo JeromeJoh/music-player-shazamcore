@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { DetailsHeader, Error, Loader, RelatedSongs } from "../components";
@@ -48,8 +47,8 @@ const SongDetails = () => {
         <DetailsHeader artistId={artistId} songData={songData} />
 
         {/* Lyrics */}
-        <div className="py-8 text-center">
-          <h2 className="text-titleBlack text-2xl font-bold mb-4">歌词</h2>
+        <div className="py-8 px-4 text-center">
+          <h2 className="text-titleBlack text-xl mb-6 font-bold">歌词</h2>
           <div className="text-textBlack space-y-4 px-4">
             {songData?.sections[1].type === "LYRICS" ? (
               songData?.sections[1]?.text.map((line, i) => (
@@ -71,6 +70,7 @@ const SongDetails = () => {
 
       {/* Related Songs */}
       <RelatedSongs
+        title="相似歌曲"
         data={data}
         artistId={artistId}
         isPlaying={isPlaying}

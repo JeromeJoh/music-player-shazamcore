@@ -12,7 +12,7 @@ const SeekBar = ({ value, min, max, onInput }) => {
         min={min}
         max={max}
         onInput={onInput}
-        className="md:block w-24 md:w-56 2xl:w-96 h-1 mx-4 2xl:mx-6"
+        className="md:block w-24 md:w-60 2xl:w-96 h-1 mx-4 2xl:mx-6"
       />
       <p>{max === 0 ? "0:00" : getTime(max)}</p>
     </div>

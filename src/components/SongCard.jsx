@@ -11,14 +11,14 @@ const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
 
   const dispatch = useDispatch();
 
-  const handlePlayClick = useCallback(() => {
-    dispatch(playPause(false));
-  });
-
   const handlePauseClick = useCallback(() => {
+    dispatch(playPause(false));
+  }, []);
+
+  const handlePlayClick = useCallback(() => {
     dispatch(setActiveSong({ song, data, i}));
     dispatch(playPause(true));
-  });
+  }, []);
 
   return (
     <article className="flex flex-col justify-center items-start border-bgGray border-[.5px] p-8 transition-hover hover:shadow-inner cursor-pointer">
@@ -26,7 +26,7 @@ const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
       {/* Cover */}
       <div className="relative w-full group">
         <img src={song.images?.coverart || loader} alt="cover" />
-        <div className={`absolute inset-0 text-white hover:bg-black hover:bg-opacity-50 group-hover:grid ${activeSong?.title === song.title ? 'bg-black bg-opacity-50' : 'hidden'}`}>
+        <div className={`absolute inset-0 text-bgWhite hover:bg-black hover:bg-opacity-50 group-hover:grid ${activeSong?.title === song.title ? 'bg-black bg-opacity-50' : 'hidden'}`}>
           <PlayPause
             song={song}
             isPlaying={isPlaying}

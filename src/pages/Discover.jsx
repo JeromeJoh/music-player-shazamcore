@@ -61,12 +61,12 @@ const Discover = () => {
   
   const handlePauseClick = useCallback(() => {
     dispatch(playPause(false));
-  });
+  }, []);
   
   const handlePlayClick = useCallback((song, i) => {
     dispatch(setActiveSong({ song, data, i }));
     dispatch(playPause(true));
-  });
+  }, []);
 
   if(isFetching) return <Loader title="加载中..." />;
   if(error) return <Error text="加载出错，请重试" />;
@@ -78,7 +78,7 @@ const Discover = () => {
       {/* Singles Chart*/}
       <section className="rounded-md border-[1px] border-x-[.5px] border-borderGray bg-white shadow-sm mb-8 overflow-hidden">
         <div className="flex justify-between items-center h-20 font-bold px-4 py-4 border-b-[.5px] border-borderGray bg-bgWhite">
-          <h2 className="text-2xl text-titleBlack">热门单曲</h2>
+          <h2 className="text-2xl text-titleBlack">热门推荐</h2>
           <Link to="/top-charts">
             <TfiMoreAlt className="text-gray h-6 w-6 mr-2 cursor-pointer hover:text-activeBlue transition" />
           </Link>
