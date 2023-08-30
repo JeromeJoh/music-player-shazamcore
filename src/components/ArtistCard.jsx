@@ -10,11 +10,11 @@ const ArtistCard = ({ track }) => {
       className="relative flex flex-col justify-center items-start border-bgGray border-[.5px] p-8 transition-hover hover:shadow-inner cursor-pointer group"
       onClick={() => navigate(`/artists/${track?.artists[0].adamid}`)}
     >
-      <p className="max-w-full mb-6 text-black font-bold text-lg truncate transition group-hover:text-activeBlue">
+      <p className="max-w-full mb-2 text-black font-bold text-lg truncate transition group-hover:text-activeBlue">
         {track?.subtitle}
       </p>
-      <img alt="cover" src={track?.images?.coverart || loader} className='border-borderGray border-[1px]'/>
-      <p className="w-full text-center text-sm my-2 font-light opacity-60 italic">Newest Release</p>
+      <p className="w-full text-sm my-2 font-light opacity-60 border-t-[.5px] border-bgGray pt-4">Newest Release</p>
+      <img alt="cover" src={track?.images?.coverart || loader}/>
     </article>
   );
 };

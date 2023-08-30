@@ -27,19 +27,18 @@ const links = [
   },
 ];
 
-const NavLinks = () => {
-  const activatedId = useState(links[0].id);
+const NavLinks = ({ closeSidebar }) => {
 
   const handleLinkClick = useCallback(() => {});
 
   return (
-    <nav className="w-full flex flex-col justify-center items-center">
+    <nav className="w-full flex flex-col justify-center items-center" onClick={() => closeSidebar()}>
       {links.map((item) => {
         return (
           <NavLink
             key={item.id}
             to={item.path}
-            className="w-full rounded hover:bg-[#242529]"
+            className="w-full rounded hover:bg-[#242529] select-none"
             onClick={handleLinkClick && handleLinkClick()}
           >
             <div className="flex md:flex-col md:gap-x-0 gap-x-2 justify-center items-center h-28 w-full text-navText hover:text-brightRed">
@@ -62,7 +61,7 @@ const Sidebar = () => {
         <div className="mb-8">
           <img src={logo} alt="Logo" className="h-24" />
         </div>
-        <NavLinks />
+        <NavLinks closeSidebar={() => setMobileMenuOpen(false)} />
       </aside>
 
       <div
@@ -80,7 +79,7 @@ const Sidebar = () => {
         <div className="flex flex-col justify-center items-center mb-4 select-none">
           <img src={logo} alt="Logo" className="h-24" />
         </div>
-        <NavLinks />
+        <NavLinks closeSidebar={() => setMobileMenuOpen(false)} />
       </aside>
     </>
   );

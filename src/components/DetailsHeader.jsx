@@ -71,7 +71,7 @@ const DetailsHeader = ({ artistId, artistData, songData }) => {
 
       <div className={wrapperStyle}>
         <div className={titleStyle}>详细介绍</div>
-        <p className="mt-4 font-serif text-base">{artistData?.attributes?.artistBio}</p>
+        <p className="my-4 font-serif text-base">{artistData?.attributes?.artistBio}</p>
       </div>
     </div>
   )
