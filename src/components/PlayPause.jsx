@@ -7,7 +7,6 @@ const PlayPause = ({
   handlePlay,
   handlePause,
 }) => {
-  console.log();
   return (
     <div 
       className="h-full w-full grid place-items-center"
