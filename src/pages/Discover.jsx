@@ -13,7 +13,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
+
+import { useSessionStorage } from "../hooks";
 
 const TopChartCard = ({
   song,
@@ -57,7 +59,15 @@ const Discover = () => {
 
   const dispatch = useDispatch();
   const { activeSong, isPlaying } = useSelector((state) => state.player);
-  const { data, isFetching, error } = useGetTopChartsQuery();
+  const [ discoverData, setDiscoverData ] = useSessionStorage('DISCOVER_DATA', null);
+  const { data, isFetching, error } = useGetTopChartsQuery({ skip: !!discoverData});
+
+  useEffect(() => {
+    if(data && !discoverData) {
+      setDiscoverData(data);
+    }
+  }, [data, discoverData, setDiscoverData]);
+
   
   const handlePauseClick = useCallback(() => {
     dispatch(playPause(false));
@@ -71,7 +81,8 @@ const Discover = () => {
   if(isFetching) return <Loader title="加载中..." />;
   if(error) return <Error text="加载出错，请重试" />;
 
-  const topSingles = data?.slice(0, 10);
+
+  const topSingles = discoverData.slice(0,10) ?? data?.slice(0,10);
 
   return (
     <>

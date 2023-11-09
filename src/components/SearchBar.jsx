@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef } from 'react';
 import { TbCloudSearch } from 'react-icons/tb';
 
 import { useNavigate } from 'react-router-dom';

@@ -7,10 +7,10 @@ const Track = ({ isPlaying, isActive, activeSong }) => (
       <img src={activeSong?.images?.coverart || loader} alt="cover art" className="rounded-full" />
     </div>
     <div className="space-y-1 flex-1 overflow-hidden">
-      <p className="w-full truncate font-bold text-lg">
+      <p className="w-full truncate font-bold text-lg" title={activeSong?.title}>
         {activeSong?.title ? activeSong?.title : 'Song Name'}
       </p>
-      <p className="truncate">
+      <p className="truncate" title={activeSong?.subtitle}>
         {activeSong?.subtitle ? activeSong?.subtitle : 'Artist'}
       </p>
     </div>

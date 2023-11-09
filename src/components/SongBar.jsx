@@ -28,7 +28,7 @@ const SongBar = ({
         <Link to={`/songs/${song?.key}`}>
           <p className="text-titleBlack font-bold text-lg group-hover:text-activeBlue transition truncate">{song?.title}</p>
         </Link>
-        <p className="max-w-full w-fit text-textBlack text-sm truncate hover:text-black transition">{song?.subtitle}</p>
+        <p title={song?.subtitle} className="max-w-full w-fit text-textBlack text-sm truncate hover:text-black transition">{song?.subtitle}</p>
       </div>
       <div className="text-gray hover:text-activeBlue flex-shrink-0">
         <PlayPause
@@ -56,7 +56,7 @@ const SongBar = ({
         src={song?.attributes?.artwork?.url}
         alt={song?.title}
       />
-      <p className="flex-1 ml-4 truncate transition">{song?.attributes.name}</p>
+      <p title={song?.attributes.name} className="flex-1 ml-4 truncate transition">{song?.attributes.name}</p>
     </div>
   )
 }

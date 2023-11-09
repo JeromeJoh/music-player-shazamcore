@@ -39,10 +39,10 @@ const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
 
       {/* Song Info */}
       <div className="w-full flex flex-col items-start mt-4">
-        <p className="max-w-full mb-1 text-titleBlack font-bold text-lg truncate hover:text-activeBlue transition">
-          <Link to={`/songs/${song.key}`}>{song.title}</Link>
+        <p title={song?.title} className="max-w-full mb-1 text-titleBlack font-bold text-lg truncate hover:text-activeBlue transition">
+          <Link to={`/songs/${song?.key}`}>{song?.title}</Link>
         </p>
-        <p className="max-w-full text-textBlack text-sm truncate hover:text-activeBlue transition">
+        <p title={song?.subtitle} className="max-w-full text-textBlack text-sm truncate hover:text-activeBlue transition">
           <Link
             to={
               song.artists
@@ -50,7 +50,7 @@ const SongCard = ({ song, isPlaying, activeSong, i, data }) => {
                 : "/top-charts"
             }
           >
-            {song.subtitle}
+            {song?.subtitle}
           </Link>
         </p>
       </div>
